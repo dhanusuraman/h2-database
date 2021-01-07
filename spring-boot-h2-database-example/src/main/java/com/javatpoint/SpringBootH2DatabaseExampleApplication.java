@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class SpringBootH2DatabaseExampleApplication {
-    //Main Method
+    //Main Method Execution
     public static void main(String[] args) {
         SpringApplication.run(SpringBootH2DatabaseExampleApplication.class, args);
     }
