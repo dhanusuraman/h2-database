@@ -28,7 +28,7 @@ public class StudentController {
   // creating a get mapping that retrieves the detail of a specific student
   @GetMapping("/student/{id}")
   public Optional<Student> getStudent(@PathVariable("id") int id) {
-    return studentService.getStudentById(id);
+    retur studentService.getStudentById(id);
   }
 
   // creating a delete mapping that deletes a specific student

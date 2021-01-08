@@ -21,7 +21,6 @@ public class StudentService {
   // getting a specific record
   public Optional<Student> getStudentById(int id) {
     return studentRepository.findById(id);
-  }
 
   public void saveOrUpdate(Student student) {
     studentRepository.save(student);
