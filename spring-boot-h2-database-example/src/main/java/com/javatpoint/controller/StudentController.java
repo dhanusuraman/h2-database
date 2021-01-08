@@ -1,6 +1,7 @@
 package com.javatpoint.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -26,8 +27,8 @@ public class StudentController {
 
   // creating a get mapping that retrieves the detail of a specific student
   @GetMapping("/student/{id}")
-  public Student getStudent(@PathVariable("id") int id) {
-    return studentService.getStudentById(id);
+  public Optional<Student> getStudent(@PathVariable("id") int id) {
+    retur studentService.getStudentById(id);
   }
 
   // creating a delete mapping that deletes a specific student
