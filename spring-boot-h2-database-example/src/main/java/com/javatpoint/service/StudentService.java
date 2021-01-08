@@ -2,6 +2,8 @@ package com.javatpoint.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.javatpoint.model.Student;
@@ -9,16 +11,16 @@ import com.javatpoint.repository.StudentRepository;
 // defining the business logic
 @Service
 public class StudentService {
-  @Autowired StudentRepository studentRepository;
+  @Autowired private StudentRepository studentRepository;
   // getting all student records
   public List<Student> getAllStudent() {
-    List<Student> students = new ArrayList<Student>();
-    studentRepository.findAll().forEach(student -> students.add(student));
+    List<Student> students = new ArrayList<>();
+    studentRepository.findAll().forEach(students::add);
     return students;
   }
   // getting a specific record
-  public Student getStudentById(int id) {
-    return studentRepository.findById(id).get();
+  public Optional<Student> getStudentById(int id) {
+    return studentRepository.findById(id);
   }
 
   public void saveOrUpdate(Student student) {
